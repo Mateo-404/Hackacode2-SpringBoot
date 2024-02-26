@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
@@ -34,4 +35,9 @@ public class Servicio {
     private tipo_servicio tipo_servicio;
     @Temporal(TemporalType.DATE)
     private LocalDate fecha_servicio;
+    //Relaciones
+    @OneToOne
+    private Cliente cliente;
+    @OneToOne
+    private Empleado empleado;
 }

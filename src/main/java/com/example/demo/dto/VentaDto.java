@@ -3,11 +3,17 @@ package com.example.demo.dto;
 
 import java.time.LocalDate;
 
+import com.example.demo.model.Cliente;
+import com.example.demo.model.Empleado;
+import com.example.demo.model.Paquete;
+import com.example.demo.model.Servicio;
+
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
@@ -29,11 +35,16 @@ public class VentaDto {
     //Datos de la venta
     @Basic
     private Long id_servicio_paquete;
-    private Long id_cliente;
-    private Long id_empleado;
     private Medio_de_Pago medio_de_pago;
     private Double monto_neto;
     @Temporal(TemporalType.DATE)
     private LocalDate fecha;
-
+    @OneToOne
+    private Empleado empleado;
+    @OneToOne
+    private Cliente cliente;
+    @OneToOne
+    private Paquete paquete;
+    @OneToOne
+    private Servicio servicio;
 }
