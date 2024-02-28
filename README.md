@@ -1,4 +1,4 @@
-# Desafio HackaCode II - Todo Code Academy
+# Desafio HackaCode II - TodoCode Academy
 
 ## Descripción
 
